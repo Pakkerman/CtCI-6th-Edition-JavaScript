@@ -1,4 +1,4 @@
-# Cracking the Coding Interview 6th Edition - JavaScript
+# Cracking the Coding Interview 6th Edition - TypeScript
 
 ## Instructions
 
@@ -11,6 +11,11 @@
 - Under each JavaScript file, there are tests to check that the code is working as expected. For convenience, simple logging is used to test the functions. To run the tests, just cd into the folder containing the .js file and run `node <fileName>.js` to run the tests.
 
 - Contributions welcome
+
+## Additional Information
+  - This is a clone from the offical book solutions of JavaScript.
+  - Most solved sections are re-written with TypeScript. 
+  - Added bun tests for solved sections.
 
 ## List of Coding Questions:
 
@@ -137,6 +142,6 @@
 ## Test
 
 ```sh
-npm test
+bun test
 ```
 
