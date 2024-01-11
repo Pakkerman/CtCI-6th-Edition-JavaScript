@@ -2,9 +2,8 @@
 
 // 111001 to 110110
 export function solution(n: number): number {
-  let odd = n & 0x55555555
-  let even = n & 0xaaaaaaaa
-
+  const even = n & 0xaaaaaaaa
+  const odd = n & 0x55555555
   return (even >>> 1) | (odd << 1)
 }
 

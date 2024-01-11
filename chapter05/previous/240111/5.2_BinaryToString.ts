@@ -3,9 +3,7 @@ export function multiply(n: number): string {
   const out: string[] = ['.']
   while (n) {
     if (32 < out.length) return 'ERROR'
-
     n *= 2
-
     if (1 <= n) {
       n -= 1
       out.push('1')
@@ -13,7 +11,6 @@ export function multiply(n: number): string {
       out.push('0')
     }
   }
-
   return out.join('')
 }
 
@@ -23,7 +20,7 @@ export function fraction(n: number): string {
   while (n) {
     if (32 < out.length) return 'ERROR'
 
-    frac *= 0.5
+    frac /= 2
     if (frac <= n) {
       n -= frac
       out.push('1')
@@ -31,6 +28,5 @@ export function fraction(n: number): string {
       out.push('0')
     }
   }
-
   return out.join('')
 }

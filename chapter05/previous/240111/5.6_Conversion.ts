@@ -2,10 +2,9 @@
 // Output:    2
 
 export function conversion(n: number, t: number): number {
-  let NOT = n ^ t
+  const not = n ^ t
   let count = 0
-  while (NOT) {
-    NOT &= NOT - 1
+  for (let i = not; i !== 0; i &= i - 1) {
     count++
   }
   return count

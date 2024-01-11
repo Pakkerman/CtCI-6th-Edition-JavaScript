@@ -7,15 +7,16 @@ import { clearBit, clearBitsIthTo0, setBit } from './5.0_BitOperations'
 export function brute(n: number): number {
   const ones = count(n)
   let curr = n + 1
-  while (count(curr) != ones) {
+  while (ones !== count(curr)) {
     curr++
   }
   return curr
 
-  //helper
   function count(n: number): number {
     let count = 0
-    for (; 0 < n; n &= n - 1) count++
+    for (let i = n; i > 0; i &= i - 1) {
+      count++
+    }
     return count
   }
 }
@@ -34,11 +35,11 @@ export function getNext(n: number): number {
   let trailingZeros = 0
   let trailingOnes = 0
   let curr = n
+
   while (curr && (curr & 0b1) === 0) {
     trailingZeros++
     curr >>>= 1
   }
-
   while (curr && (curr & 0b1) === 1) {
     trailingOnes++
     curr >>>= 1
@@ -73,15 +74,12 @@ export function getPrevious(n: number): number {
     trailingOnes++
     curr >>>= 1
   }
-
   while (curr && (curr & 0b1) === 0) {
     trailingZeros++
     curr >>>= 1
   }
 
-  if (!curr) {
-    return -1
-  }
+  if (curr === 0) return -1
 
   const flipIdx = trailingOnes + trailingZeros
   n &= ~0b0 << (flipIdx + 1)
